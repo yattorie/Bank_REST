@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: V1_4__create_block_orders
+      author: yattorie
+      changes:
+        - createTable:
+            tableName: block_orders
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: card_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_block_orders_card
+                    references: cards(id)
+                    onDelete: CASCADE
+              - column:
+                  name: requested_by
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_block_orders_user
+                    references: users(id)
+                    onDelete: CASCADE
+              - column:
+                  name: status
+                  type: VARCHAR(20)
+                  constraints:
+                    nullable: false
