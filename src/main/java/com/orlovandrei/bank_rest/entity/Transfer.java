@@ -44,10 +44,10 @@ public class Transfer {
     @JoinColumn(name = "to_card_id", nullable = false)
     Card toCard;
 
-    @Column(nullable = false)
+    @Column(name = "amount", nullable = false)
     BigDecimal amount;
 
-    @Column(nullable = false)
+    @Column(name = "timestamp", nullable = false)
     LocalDateTime timestamp;
 
     @Enumerated(EnumType.STRING)

@@ -1,6 +1,7 @@
 package com.orlovandrei.bank_rest.entity;
 
 import com.orlovandrei.bank_rest.entity.enums.BlockOrderStatus;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -29,6 +30,7 @@ import lombok.experimental.FieldDefaults;
 public class BlockOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     Long id;
 
     @ManyToOne

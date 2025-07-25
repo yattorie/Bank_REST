@@ -1,6 +1,7 @@
 package com.orlovandrei.bank_rest.entity;
 
 import com.orlovandrei.bank_rest.entity.enums.CardStatus;
+import com.orlovandrei.bank_rest.util.CardNumberConverter;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
