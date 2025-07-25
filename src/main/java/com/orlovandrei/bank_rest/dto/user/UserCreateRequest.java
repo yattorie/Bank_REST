@@ -14,7 +14,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Schema(description = "Request for creating a new user")
 @AllArgsConstructor
-public class UserCreate {
+public class UserCreateRequest {
     @Schema(
             description = "Username",
             example = "new_user"

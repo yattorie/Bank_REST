@@ -1,8 +1,8 @@
 package com.orlovandrei.bank_rest.dto.mapper;
 
-import com.orlovandrei.bank_rest.dto.user.UserCreate;
+import com.orlovandrei.bank_rest.dto.user.UserCreateRequest;
 import com.orlovandrei.bank_rest.dto.user.UserResponse;
-import com.orlovandrei.bank_rest.dto.user.UserUpdate;
+import com.orlovandrei.bank_rest.dto.user.UserUpdateRequest;
 import com.orlovandrei.bank_rest.entity.User;
 import com.orlovandrei.bank_rest.entity.enums.Role;
 import org.mapstruct.Mapper;
@@ -18,16 +18,16 @@ public interface UserMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "role", ignore = true)
     @Mapping(target = "cards", ignore = true)
-    User toEntity(UserCreate dto);
+    User toEntity(UserCreateRequest dto);
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "cards", ignore = true)
     @Mapping(target = "role", source = "role", qualifiedByName = "stringToRole")
-    User toEntity(UserUpdate dto);
+    User toEntity(UserUpdateRequest dto);
 
-    UserUpdate toUpdateDto(User entity);
+    UserUpdateRequest toUpdateDto(User entity);
 
-    UserCreate toCreateDto(User entity);
+    UserCreateRequest toCreateDto(User entity);
 
     @Named("roleToString")
     default String roleToString(Role role) {

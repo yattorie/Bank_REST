@@ -14,7 +14,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Schema(description = "Request for updating an existing user")
 @AllArgsConstructor
-public class UserUpdate {
+public class UserUpdateRequest {
     @Schema(description = "Updated username for the user",
             example = "updated_username"
     )
