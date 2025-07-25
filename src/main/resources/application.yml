@@ -1,0 +1,38 @@
+server:
+  port: 8080
+preliquibase:
+  enabled: true
+  scripts:
+    - classpath:db/migration/preliquibase/postgresql.sql
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  application:
+    name: Bank_REST
+  datasource:
+    url: jdbc:postgresql://${HOST}:5442/${POSTGRES_DATABASE}?currentSchema=${POSTGRES_SCHEMA}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+    driverClassName: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+  liquibase:
+    change-log: classpath:db/migration/changelog-master.yaml
+    enabled: true
+    default-schema: banking
+security:
+  jwt:
+    secret_key: ${JWT_SECRET}
+    access_token_expiration: ${ACCESS_TOKEN_EXPIRATION}
+    refresh_token_expiration: ${REFRESH_TOKEN_EXPIRATION}
+springdoc:
+  override-with-generic-response: false
+  swagger-ui:
+    path: /swagger-ui.html
+encryption:
+  encryption_password : ${ENCRYPTION_PASSWORD}
+  encryption_salt : ${ENCRYPTION_SALT}
+  key: ${ENCRYPTION_KEY}
