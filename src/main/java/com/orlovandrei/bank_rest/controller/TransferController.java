@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/transfers")
+@RequestMapping("/api/v1/transfers")
 @RequiredArgsConstructor
 @Tag(name = "Transfer Controller", description = "Transfer API")
 public class TransferController {

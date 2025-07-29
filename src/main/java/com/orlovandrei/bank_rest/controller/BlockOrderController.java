@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/block-requests")
+@RequestMapping("/api/v1/block-requests")
 @RequiredArgsConstructor
 @Tag(name = " BlockRequest Controller", description = " BlockRequest API")
 public class BlockOrderController {
