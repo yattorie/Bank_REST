@@ -2,7 +2,7 @@ package com.orlovandrei.bank_rest.dto.mapper;
 
 import java.util.List;
 
-public interface Mappable<E, D>{
+public interface Mappable<E, D> {
 
     D toDto(E entity);
 

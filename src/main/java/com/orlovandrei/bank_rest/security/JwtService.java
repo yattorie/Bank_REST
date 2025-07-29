@@ -79,7 +79,7 @@ public class JwtService {
     public String extractUsernameFromToken(String token) {
         Claims claims = extractAllClaims(token);
 
-        if(claims != null) {
+        if (claims != null) {
             return claims.getSubject();
         }
         return null;
@@ -87,7 +87,7 @@ public class JwtService {
 
     public boolean isRefreshToken(String token) {
         Claims claims = extractAllClaims(token);
-        if(claims == null) {
+        if (claims == null) {
             return false;
         }
         return "refresh".equals(claims.get("tokenType"));
