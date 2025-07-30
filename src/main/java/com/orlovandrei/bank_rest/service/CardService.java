@@ -1,7 +1,7 @@
 package com.orlovandrei.bank_rest.service;
 
 import com.orlovandrei.bank_rest.dto.balance.BalanceResponse;
-import com.orlovandrei.bank_rest.dto.card.CardRequest;
+import com.orlovandrei.bank_rest.dto.card.CardCreateRequest;
 import com.orlovandrei.bank_rest.dto.card.CardUpdateRequest;
 import com.orlovandrei.bank_rest.dto.deposit.DepositResponse;
 import com.orlovandrei.bank_rest.entity.Card;
@@ -27,7 +27,7 @@ public interface CardService {
     void activate(Long id);
 
     @Transactional
-    Card createCard(CardRequest request);
+    Card createCard(CardCreateRequest request);
 
     @Transactional
     DepositResponse deposit(Long id, String username, BigDecimal amount);

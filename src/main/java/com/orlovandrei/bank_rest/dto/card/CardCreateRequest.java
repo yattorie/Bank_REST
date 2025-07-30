@@ -11,7 +11,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Schema(description = "Request for creating a new card")
-public class CardRequest {
+public class CardCreateRequest {
     @Schema(
             description = "ID of the user who will own the card",
             example = "1"

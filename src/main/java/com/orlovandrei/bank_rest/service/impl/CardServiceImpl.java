@@ -1,7 +1,7 @@
 package com.orlovandrei.bank_rest.service.impl;
 
 import com.orlovandrei.bank_rest.dto.balance.BalanceResponse;
-import com.orlovandrei.bank_rest.dto.card.CardRequest;
+import com.orlovandrei.bank_rest.dto.card.CardCreateRequest;
 import com.orlovandrei.bank_rest.dto.card.CardUpdateRequest;
 import com.orlovandrei.bank_rest.dto.deposit.DepositResponse;
 import com.orlovandrei.bank_rest.entity.Card;
@@ -75,7 +75,7 @@ public class CardServiceImpl implements CardService {
 
     @Override
     @Transactional
-    public Card createCard(CardRequest request) {
+    public Card createCard(CardCreateRequest request) {
         User user = userRepository.findById(request.getOwnerId())
                 .orElseThrow(() -> new UserNotFoundException(Messages.USER_NOT_FOUND.getMessage()));
 

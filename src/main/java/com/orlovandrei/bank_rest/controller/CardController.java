@@ -2,7 +2,7 @@ package com.orlovandrei.bank_rest.controller;
 
 import com.orlovandrei.bank_rest.dto.balance.BalanceResponse;
 import com.orlovandrei.bank_rest.dto.blockorder.BlockOrderRequest;
-import com.orlovandrei.bank_rest.dto.card.CardRequest;
+import com.orlovandrei.bank_rest.dto.card.CardCreateRequest;
 import com.orlovandrei.bank_rest.dto.card.CardResponse;
 import com.orlovandrei.bank_rest.dto.card.CardUpdateRequest;
 import com.orlovandrei.bank_rest.dto.deposit.DepositRequest;
@@ -101,7 +101,7 @@ public class CardController {
     @Operation(summary = "Create a new card")
     public ResponseEntity<CardResponse> createCard(
             @Valid
-            @RequestBody CardRequest request) {
+            @RequestBody CardCreateRequest request) {
         Card card = cardService.createCard(request);
         return ResponseEntity.ok(cardMapper.toDto(card));
     }

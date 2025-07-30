@@ -1,6 +1,6 @@
 package com.orlovandrei.bank_rest.dto.mapper;
 
-import com.orlovandrei.bank_rest.dto.card.CardRequest;
+import com.orlovandrei.bank_rest.dto.card.CardCreateRequest;
 import com.orlovandrei.bank_rest.dto.card.CardResponse;
 import com.orlovandrei.bank_rest.entity.Card;
 import org.mapstruct.Mapper;
@@ -13,7 +13,7 @@ public interface CardMapper {
     CardResponse toDto(Card entity);
 
     @Mapping(source = "ownerId", target = "owner.id")
-    Card toEntity(CardRequest request);
+    Card toEntity(CardCreateRequest request);
 }
 
 
