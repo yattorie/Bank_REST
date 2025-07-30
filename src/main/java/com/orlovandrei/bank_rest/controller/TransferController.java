@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -26,12 +27,13 @@ public class TransferController {
     @PostMapping
     @PreAuthorize("hasRole('USER')")
     @Operation(summary = "Transfer funds between user's own cards")
-    public TransferResponse transfer(
+    public ResponseEntity<TransferResponse> transfer(
             @AuthenticationPrincipal UserDetails userDetails,
             @Valid @RequestBody TransferRequest requestDto) {
         String username = userDetails.getUsername();
         User user = userService.getByUsername(username);
-        return transferService.transferBetweenOwnCards(user, requestDto);
+        TransferResponse response = transferService.transferBetweenOwnCards(user, requestDto);
+        return ResponseEntity.ok(response);
     }
 }
 

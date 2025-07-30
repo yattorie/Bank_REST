@@ -39,14 +39,14 @@ public class TransferServiceImpl implements TransferService {
         }
 
         Card from = cardRepository.findById(requestDto.getFromCardId())
-                .filter(card -> card.getOwner().getId().equals(user.getId()))
                 .orElseThrow(() -> new CardNotFoundException(Messages.CARD_NOT_FOUND_TRANSFER.getMessage()));
+        if (!from.getOwner().getId().equals(user.getId())) {
+            throw new InvalidCardOwnerException(Messages.INVALID_CARD_OWNER.getMessage());
+        }
 
         Card to = cardRepository.findById(requestDto.getToCardId())
-                .filter(card -> card.getOwner().getId().equals(user.getId()))
                 .orElseThrow(() -> new CardNotFoundException(Messages.CARD_NOT_FOUND_TRANSFER.getMessage()));
-
-        if (!from.getOwner().getId().equals(user.getId()) || !to.getOwner().getId().equals(user.getId())) {
+        if (!to.getOwner().getId().equals(user.getId())) {
             throw new InvalidCardOwnerException(Messages.INVALID_CARD_OWNER.getMessage());
         }
 
