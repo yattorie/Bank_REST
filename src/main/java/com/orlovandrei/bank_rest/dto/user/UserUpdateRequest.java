@@ -8,12 +8,14 @@ import jakarta.validation.constraints.Size;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Schema(description = "Request for updating an existing user")
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserUpdateRequest {
     @Schema(description = "Updated username for the user",
             example = "updated_username"

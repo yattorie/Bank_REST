@@ -4,12 +4,14 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Schema(description = "Response containing details of a user")
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserResponse {
     @Schema(
             description = "Unique identifier of the user",
