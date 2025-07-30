@@ -6,6 +6,7 @@
 !docker-compose.yml
 !checkstyle.xml
 !docs
+!README.md
 
 HELP.md
 target/
