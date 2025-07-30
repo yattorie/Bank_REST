@@ -5,6 +5,7 @@
 !src/**
 !docker-compose.yml
 !checkstyle.xml
+!docs
 
 HELP.md
 target/
