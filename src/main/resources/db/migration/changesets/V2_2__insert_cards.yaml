@@ -1,0 +1,77 @@
+databaseChangeLog:
+  - changeSet:
+      id: V2_2__insert_cards
+      author: yattorie
+      changes:
+        - insert:
+            tableName: cards
+            columns:
+              - column:
+                  name: number
+                  value: Ci3teb2GkEi5JACZ0kL3hjdml7xvJ3XCP9h1RP8M72Y=
+              - column:
+                  name: owner_id
+                  valueNumeric: 1
+              - column:
+                  name: expiration_date
+                  valueDate: 2027-12-31
+              - column:
+                  name: balance
+                  valueNumeric: 1500.00
+              - column:
+                  name: status
+                  value: ACTIVE
+        - insert:
+            tableName: cards
+            columns:
+              - column:
+                  name: number
+                  value: d0qtUMxKbGeSQIHAkS82xjdml7xvJ3XCP9h1RP8M72Y=
+              - column:
+                  name: owner_id
+                  valueNumeric: 1
+              - column:
+                  name: expiration_date
+                  valueDate: 2026-06-30
+              - column:
+                  name: balance
+                  valueNumeric: 320.50
+              - column:
+                  name: status
+                  value: ACTIVE
+        - insert:
+            tableName: cards
+            columns:
+              - column:
+                  name: number
+                  value: 7B3JEOlg+b2TZQwoqdRBujdml7xvJ3XCP9h1RP8M72Y=
+              - column:
+                  name: owner_id
+                  valueNumeric: 2
+              - column:
+                  name: expiration_date
+                  valueDate: 2028-03-15
+              - column:
+                  name: balance
+                  valueNumeric: 998.00
+              - column:
+                  name: status
+                  value: BLOCKED
+        - insert:
+            tableName: cards
+            columns:
+              - column:
+                  name: number
+                  value: xROkHTNkZjOH9HosASdkfjdml7xvJ3XCP9h1RP8M72Y=
+              - column:
+                  name: owner_id
+                  valueNumeric: 3
+              - column:
+                  name: expiration_date
+                  valueDate: 2029-11-20
+              - column:
+                  name: balance
+                  valueNumeric: 10000.00
+              - column:
+                  name: status
+                  value: ACTIVE

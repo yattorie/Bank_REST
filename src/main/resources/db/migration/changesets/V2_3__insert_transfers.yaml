@@ -1,0 +1,77 @@
+databaseChangeLog:
+  - changeSet:
+      id: V2_3__insert_transfers
+      author: yattorie
+      changes:
+        - insert:
+            tableName: transfers
+            columns:
+              - column:
+                  name: from_card_id
+                  valueNumeric: 1
+              - column:
+                  name: to_card_id
+                  valueNumeric: 2
+              - column:
+                  name: amount
+                  valueNumeric: 100.00
+              - column:
+                  name: timestamp
+                  valueDate: 2025-05-20T10:00:00
+              - column:
+                  name: status
+                  value: SUCCESS
+        - insert:
+            tableName: transfers
+            columns:
+              - column:
+                  name: from_card_id
+                  valueNumeric: 2
+              - column:
+                  name: to_card_id
+                  valueNumeric: 1
+              - column:
+                  name: amount
+                  valueNumeric: 50.00
+              - column:
+                  name: timestamp
+                  valueDate: 2025-05-22T13:25:00
+              - column:
+                  name: status
+                  value: SUCCESS
+        - insert:
+            tableName: transfers
+            columns:
+              - column:
+                  name: from_card_id
+                  valueNumeric: 3
+              - column:
+                  name: to_card_id
+                  valueNumeric: 1
+              - column:
+                  name: amount
+                  valueNumeric: 25.00
+              - column:
+                  name: timestamp
+                  valueDate: 2025-05-23T09:40:00
+              - column:
+                  name: status
+                  value: FAILED
+        - insert:
+            tableName: transfers
+            columns:
+              - column:
+                  name: from_card_id
+                  valueNumeric: 1
+              - column:
+                  name: to_card_id
+                  valueNumeric: 4
+              - column:
+                  name: amount
+                  valueNumeric: 5000.00
+              - column:
+                  name: timestamp
+                  valueDate: 2025-05-25T18:00:00
+              - column:
+                  name: status
+                  value: PENDING
