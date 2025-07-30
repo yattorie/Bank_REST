@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
             throw new UserAlreadyExistsException(Messages.USERNAME.getMessage() + user.getUsername() + Messages.IS_ALREADY_TAKEN.getMessage());
         }
         if (!updatingUser.getEmail().equals(user.getEmail()) && userRepository.existsByEmail(user.getEmail())) {
-            throw new UserAlreadyExistsException(Messages.EMAIL.getMessage() + user.getEmail() + Messages.IS_ALREADY_TAKEN.getMessage());
+            throw new EmailAlreadyExistsException(Messages.EMAIL.getMessage() + user.getEmail() + Messages.IS_ALREADY_TAKEN.getMessage());
         }
 
         updatingUser.setUsername(user.getUsername());
