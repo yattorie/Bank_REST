@@ -1,5 +1,6 @@
 package com.orlovandrei.bank_rest.util;
 
+import com.orlovandrei.bank_rest.exception.EncryptionErrorException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -26,7 +27,7 @@ public class EncryptionUtil {
             byte[] encrypted = cipher.doFinal(value.getBytes());
             return Base64.getEncoder().encodeToString(encrypted);
         } catch (Exception e) {
-            throw new RuntimeException("Encryption error", e);
+            throw new EncryptionErrorException(Messages.ENCRYPTION_ERROR.getMessage(), e);
         }
     }
 
@@ -39,7 +40,7 @@ public class EncryptionUtil {
             byte[] decrypted = cipher.doFinal(decodedValue);
             return new String(decrypted);
         } catch (Exception e) {
-            throw new RuntimeException("Decryption error", e);
+            throw new EncryptionErrorException(Messages.DECRYPTION_ERROR.getMessage(), e);
         }
     }
 }

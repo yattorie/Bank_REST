@@ -143,4 +143,11 @@ public class ControllerAdvice {
         return new ExceptionBody(e.getMessage());
     }
 
+    @ExceptionHandler(EncryptionErrorException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public ExceptionBody handleEncryptionError(EncryptionErrorException e) {
+        LoggerUtil.logError("Encryption error: " + e.getMessage(), e);
+        return new ExceptionBody("An error occurred while processing card data");
+    }
+
 }
