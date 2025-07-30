@@ -8,7 +8,7 @@
         <version>3.4.4</version>
         <relativePath/>
     </parent>
-    <groupId>com.orlovandrei</groupId>
+    <groupId>com.example</groupId>
     <artifactId>Bank_REST</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Bank_REST</name>
