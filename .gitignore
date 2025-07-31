@@ -7,6 +7,7 @@
 !checkstyle.xml
 !docs
 !README.md
+!Dockerfile
 
 HELP.md
 target/
