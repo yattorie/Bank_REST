@@ -1,18 +1,41 @@
 version: '3.8'
 
-volumes:
-  pg_banking:
-
 services:
-  banking:
+  postgres:
     image: postgres
     restart: always
+    container_name: banking_postgres
     environment:
-      - POSTGRES_USER=${POSTGRES_USERNAME}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=${POSTGRES_DATABASE}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
+      POSTGRES_USER: ${POSTGRES_USERNAME}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
-      - pg_banking:/var/lib/postgresql/data
-
+      - banking_postgres_data:/var/lib/postgresql/data
     ports:
-      - "127.0.0.1:5442:5432"
+      - "5432:5432"
+    networks:
+      - bank-network
+
+  app:
+    restart: always
+    container_name: banking_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    env_file:
+      - ./.env
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/${POSTGRES_DATABASE}?currentSchema=${POSTGRES_SCHEMA}
+    networks:
+      - bank-network
+
+volumes:
+  banking_postgres_data:
+
+networks:
+  bank-network:
+    driver: bridge
