@@ -8,6 +8,8 @@
 !docs
 !README.md
 !Dockerfile
+!README.ru.md
+!README.en.md
 
 HELP.md
 target/
