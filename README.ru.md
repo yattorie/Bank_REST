@@ -92,7 +92,7 @@ RESTful-приложение для управления пользовател�
 git clone https://github.com/yattorie/Bank_REST.git
 cd Bank_REST
 
-# 2. Создать .env файл в корне проекта
+# 2. Создать .env файл в корне проекта (пример .env.example)
 
 # 3. Сборка проекта
 mvn clean install
@@ -100,25 +100,6 @@ mvn clean install
 # 4. Запуск приложения и зависимостей
 docker compose up -d
 ```
-
-#### Пример файла .env
-
-```env
-HOST=localhost
-POSTGRES_USERNAME=postgres
-POSTGRES_PASSWORD=root
-POSTGRES_DATABASE=banking
-POSTGRES_SCHEMA=banking
-
-JWT_SECRET=71472e78c8154ede3e98ffcf9bcca01b8d2299d5d9457ef147b82914d1f02b8e9f524241d9ad50dea9f4cb34cafddceb3319872fd5b56ff2f0f0ac36d6f4fb21
-ACCESS_TOKEN_EXPIRATION=36000000
-REFRESH_TOKEN_EXPIRATION=252000000
-
-ENCRYPTION_PASSWORD=MYSECRETPASSWORD
-ENCRYPTION_SALT=1234567890ABCDEF
-ENCRYPTION_KEY=h6X0Zk0oyk0nVxN5d8AQjA==
-```
-
 ---
 
 ## 🧑‍💻 Контакты
